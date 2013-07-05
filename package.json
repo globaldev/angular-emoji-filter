@@ -3,6 +3,7 @@
     "private": true,
     "devDependencies": {
         "grunt": "0.4.x",
-        "grunt-contrib-jshint": "0.6.x"
+        "grunt-contrib-jshint": "0.6.x",
+        "node-spritesheet": "0.4.x"
     }
 }

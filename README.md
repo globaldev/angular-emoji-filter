@@ -1,4 +1,3 @@
-angular-emoji-filter
-====================
+# AngularJS Emoji Filter
 
-Angular filter for parsing emoji codes.
+A simple AngularJS filter for parsing text and replacing emoji codes with actual emoticons.

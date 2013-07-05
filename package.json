@@ -2,6 +2,7 @@
     "name": "angular-emoji-filter",
     "private": true,
     "devDependencies": {
-        "grunt": "0.4.x"
+        "grunt": "0.4.x",
+        "grunt-contrib-jshint": "0.6.x"
     }
 }

@@ -2,6 +2,9 @@ module.exports = function (grunt) {
 
     "use strict";
 
+    var exec = require("child_process").exec,
+        glob = require("glob");
+
     grunt.initConfig({
         jshint: {
             options: {
@@ -40,31 +43,53 @@ module.exports = function (grunt) {
                 }
             }
         },
-        spritesheet: {
-            compile: {
-                options: {
-                    outputCss: "emoji.css",
-                    selector: ".emoji",
-                    downsampling: "LanczosSharp",
-                    output: {
-                        "normal": {
-                            pixelRatio: 1,
-                            outputImage: "emoji.png"
-                        },
-                        "64": {
-                            pixelRatio: 2,
-                            outputImage: "emoji@2x.png"
-                        }
-                    }
-                },
+        uglify: {
+            browser: {
                 files: {
-                    dist: "res/emoji/*.png"
+                    "dist/emoji.min.js": [
+                        "lib/emoji.js"
+                    ]
+                }
+            }
+        },
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: "dist/",
+                src: [
+                    "*.css"
+                ],
+                dest: "dist/",
+                ext: ".min.css"
+            }
+        },
+        montage: {
+            "21x21": {
+                files: {
+                    dist: [
+                        "res/emoji/*.png"
+                    ]
+                },
+                options: {
+                    size: 21,
+                    prefix: ".emoji",
+                    outputImage: "emoji.png",
+                    outputStylesheet: "emoji.css"
                 }
             }
         }
     });
 
+    grunt.registerTask("default", [
+        "jshint",
+        "montage",
+        "uglify",
+        "cssmin"
+    ]);
+
     grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("node-spritesheet");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-montage");
 
 };

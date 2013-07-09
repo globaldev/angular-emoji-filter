@@ -1,11 +1,28 @@
 {
     "name": "angular-emoji-filter",
     "private": true,
+    "author": {
+        "name": "James Allardice",
+        "email": "jallardice@globalpersonals.co.uk"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/globaldev/angular-emoji-filter.git"
+    },
+    "bugs": {
+        "url": "https://github.com/globaldev/angular-emoji-filter/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/globaldev/angular-emoji-filter/blob/master/LICENSE"
+        }
+    ],
     "devDependencies": {
         "grunt": "0.4.x",
         "grunt-contrib-jshint": "0.6.x",
         "grunt-contrib-uglify": "0.2.x",
         "grunt-contrib-cssmin": "0.6.x",
-        "grunt-montage": "0.0.x"
+        "grunt-montage": "~0"
     }
 }

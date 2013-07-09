@@ -2,9 +2,6 @@ module.exports = function (grunt) {
 
     "use strict";
 
-    var exec = require("child_process").exec,
-        glob = require("glob");
-
     grunt.initConfig({
         jshint: {
             options: {

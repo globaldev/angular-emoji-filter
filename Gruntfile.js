@@ -71,7 +71,10 @@ module.exports = function (grunt) {
                     size: 21,
                     prefix: ".emoji",
                     outputImage: "emoji.png",
-                    outputStylesheet: "emoji.css"
+                    outputStylesheet: "emoji.css",
+                    magick: {
+                        background: "none"
+                    }
                 }
             }
         }

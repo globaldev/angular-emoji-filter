@@ -1,6 +1,6 @@
 # AngularJS Emoji Filter
 
-> An AngularJS filter for replacing emoji codes with actual emoticons
+> An AngularJS filter for replacing [emoji codes](http://www.emoji-cheat-sheet.com) with actual emoticons
 
 ## Installation
 
@@ -45,7 +45,7 @@ Use it just like any Angular filter. Here's some very simple example markup:
 ```html
 <body ng-app="app" ng-controller="AppCtrl">
     <ul>
-        <li ng-repeat="message in messages">{{ message | emoji }}</li>
+        <li ng-repeat="message in messages" ng-bind-html-unsafe="message | emoji"></li>
     </ul>
 </body>
 ```

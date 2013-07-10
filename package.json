@@ -1,5 +1,6 @@
 {
     "name": "angular-emoji-filter",
+    "version": "0.0.1",
     "private": true,
     "author": {
         "name": "James Allardice",

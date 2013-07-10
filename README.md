@@ -4,7 +4,7 @@
 
 ## Installation
 
-The filter is available in a default form on Bower. By default, each emoji is 21x21 pixels. You can install it the usual way:
+The filter is available in a default form on [Bower](http://bower.io) (you will need Bower 0.9 or greater). By default, each emoji is 21x21 pixels. You can install it the usual way:
 
     bower install angular-emoji-filter
 
@@ -35,7 +35,7 @@ grunt.initConfig({
 });
 ```
 
-We are using the [Grunt Montage](https://github.com/globaldev/grunt-montage) plugin to generate the sprite sheet. Check the readme of the plugin for full configuration details. Once you have customised the Gruntfile, you can build production-ready assets by running the default Grunt task.
+We are using the [Grunt Montage](https://github.com/globaldev/grunt-montage) plugin to generate the sprite sheet. Check the readme of the plugin for full configuration details. Once you have customised the Gruntfile, you can build production-ready assets by running the default Grunt task. This will generate the necessary files in the `dist` directory.
 
 To get the filter working with your Angular app just include the stylesheet and JavaScript, and inject the `emoji` module into your app as shown in the example below.
 

@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     "use strict";
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON("package.json"),
         jshint: {
             options: {
                 camelcase: true,
@@ -105,6 +106,14 @@ module.exports = function (grunt) {
                 }
             }
         }
+    });
+
+    grunt.registerTask("bower", "Generate a bower.json file and publish built assets to Bower", function () {
+        grunt.file.write("dist/bower.json", JSON.stringify({
+            name: "angular-emoji-filter",
+            version: grunt.config("pkg.version"),
+            main: "emoji.min.js"
+        }, null, 4));
     });
 
     grunt.registerTask("default", [

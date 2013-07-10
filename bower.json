@@ -1,8 +1,0 @@
-{
-    "name": "angular-emoji-filter",
-    "version": "0.0.1",
-    "main": "emoji.js",
-    "dependencies": {
-        "angular": "~1"
-    }
-}

@@ -38,16 +38,26 @@ grunt.initConfig({
 
 We are using the [Grunt Montage](https://github.com/globaldev/grunt-montage) plugin to generate the sprite sheet. Check the readme of the plugin for full configuration details. Once you have customised the Gruntfile, you can build production-ready assets by running the default Grunt task.
 
+To get the filter working with your Angular app just include the stylesheet and JavaScript, and inject the `emoji` module into your app as shown in the example below.
+
 ## Usage
 
 Use it just like any Angular filter. Here's some very simple example markup:
 
 ```html
-<body ng-app="app" ng-controller="AppCtrl">
-    <ul>
-        <li ng-repeat="message in messages" ng-bind-html-unsafe="message | emoji"></li>
-    </ul>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="emoji.min.css">
+        <script src="angular.min.js"></script>
+        <script src="emoji.min.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="AppCtrl">
+        <ul>
+            <li ng-repeat="message in messages" ng-bind-html-unsafe="message | emoji"></li>
+        </ul>
+    </body>
+</html>
 ```
 
 And the associated example Angular app:

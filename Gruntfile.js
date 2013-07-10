@@ -94,6 +94,10 @@ module.exports = function (grunt) {
                     prefix: ".emoji",
                     outputImage: "emoji.png",
                     outputStylesheet: "emoji.css",
+                    baseRules: {
+                        "text-indent": "-9999px",
+                        display: "inline-block"
+                    },
                     magick: {
                         background: "none",
                         depth: 7

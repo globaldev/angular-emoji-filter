@@ -15,18 +15,17 @@ grunt.initConfig({
    // ...
    montage: {
         "21x21": {
-            files: {
-                dist: [
-                    "res/emoji/*.png"
-                ]
-            },
-            // Customise your sprite sheet here:
+            // ...
             options: {
-                size: 21,
-                prefix: ".emoji",
-                outputImage: "emoji.png",
-                outputStylesheet: "emoji.css",
-                magick: {
+                size: 21,                         // Width/height of each icon
+                prefix: ".emoji",                 // Base CSS selector
+                outputImage: "emoji.png",         // File name of sprite sheet
+                outputStylesheet: "emoji.css",    // File name of stylesheet
+                baseRules: {                      // CSS properties added to the base rule
+                    "text-indent": "-9999px",
+                    display: "inline-block"
+                },
+                magick: {                         // ImageMagick options
                     background: "none",
                     depth: 7
                 }

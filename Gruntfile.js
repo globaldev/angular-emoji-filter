@@ -129,7 +129,7 @@ module.exports = function (grunt) {
         grunt.file.write("dist/bower.json", JSON.stringify({
             name: "angular-emoji-filter",
             version: grunt.config("pkg.version"),
-            main: "emoji.min.js"
+            main: "dist/emoji.min.js"
         }, null, 4));
     });
 

@@ -83,6 +83,23 @@ module.exports = function (grunt) {
                 ext: ".min.css"
             }
         },
+        compress: {
+            dist: {
+                options: {
+                    archive: "dist/angular-emoji.zip"
+                },
+                files: [
+                    {
+                        src: [
+                            "dist/*.js",
+                            "dist/*.css",
+                            "dist/*.png",
+                            "LICENSE"
+                        ]
+                    }
+                ]
+            }
+        },
         montage: {
             "21x21": {
                 files: {
@@ -122,7 +139,8 @@ module.exports = function (grunt) {
         "montage",
         "uglify",
         "cssmin",
-        "clean:max"
+        "clean:max",
+        "compress"
     ]);
 
     grunt.registerTask("dev", [
@@ -137,6 +155,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-compress");
     grunt.loadNpmTasks("grunt-montage");
 
 };

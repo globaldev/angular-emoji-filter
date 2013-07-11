@@ -4,17 +4,97 @@
         <meta charset="utf-8">
         <title>AngularJS Emoji Filter</title>
         <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/emoji/emoji.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+        <script src="assets/emoji/emoji.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <style>
+            body {
+                padding: 20px 0;
+            }
+            textarea {
+                width: 95%;
+                height: 150px;
+                line-height: 24px;
+                padding: 9.5px;
+            }
+            .plain {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                word-wrap: normal;
+                word-break: normal;
+                line-height: 24px;
+            }
+            .alternative {
+                font-size: 14px;
+            }
+            .meta {
+                font-size: 10px;
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
+        <div class="container" ng-app="app" ng-controller="AppCtrl">
             <div class="hero-unit">
                 <h1>AngularJS Emoji Filter</h1>
                 <p>
                     A simple filter for AngularJS to parse text and replace Emoji codes with actual Emoji icons.
                 </p>
                 <p>
-                    <a href="assets/emoji/angular-emoji.zip" class="btn btn-primary btn-large">Download now</a>
+                    <a href="assets/emoji/angular-emoji.zip" class="btn btn-primary btn-large">
+                        Download now <span class="meta">(v0.0.1)</span>
+                    </a>
+                    <span class="alternative">or install from Bower with <code>bower install angular-emoji-filter</code></small>
                 </p>
+            </div>
+            <h2>Demo</h2>
+            <div class="row">
+                <div class="span6">
+                    <h5>Type a message:</h5>
+                    <textarea ng-model="message"></textarea>
+                </div>
+                <div class="span6">
+                    <h5>See the output:</h5>
+                    <pre class="plain" ng-bind-html-unsafe="message | emoji"></pre>
+                </div>
+            </div>
+            <h2>How to use it</h2>
+            <div class="row">
+                <div class="span6">
+                    <script src="https://gist.github.com/jamesallardice/5973692.js"></script>
+                </div>
+                <div class="span6">
+                    <h3>Installation</h3>
+                    <p>
+                        The filter is available through <a href="http://bower.io">Bower</a>. Install it with <code>bower install angular-emoji-filter</code>. Alternatively, download the <a href="assets/emoji/angular-emoji.zip">bundle</a> from this page and unzip it.
+                    </p>
+                    </p>
+                    <h3>Basic use</h3>
+                    <p>
+                        Include the JavaScript and CSS files like normal. Make sure you include <code>emoji.min.js</code> <em>after</em> your main AngularJS include.
+                    </p>
+                    <p>
+                        Set up your page as normal. Where you want to display Emoji icons, apply the <code>emoji</code> filter. Note that since the filter will output HTML it must be used in conjuction with the <code>ng-bind-html</code> directive or similar.
+                    </p>
+                    <p>
+                        Add the <code>emoji</code> module as a dependency of any Angular module you need it to be available to.
+                    </p>
+                    <h3>Customisation</h3>
+                    <p>
+                        If you want to customise the filter, you can fork the <a href="https://github.com/globaldev/angular-emoji-filter">repository on GitHub</a> and modify the Gruntfile accordingly. Full details can be found in the README file.
+                    </p>
+                </div>
+            </div>
+            <h2>Licensing and Attribution</h2>
+            <div class="row">
+                <div class="span12">
+                    <p>
+                        The AngularJS Emoji filter is released under the MIT license as detailed in the LICENSE file that should be distributed with this library; the source code is freely available.
+                    </p>
+                    <p>
+                        The filter was developed by <a href="https://twitter.com/james_allardice">James Allardice</a> during work on <a href="http://www.whitelabeldating.com">White Label Dating</a>, while employed by <a href="http://www.globalpersonals.co.uk">Global Personals Ltd</a>. Global Personals Ltd have kindly agreed to the extraction and release of this software under the license terms above.
+                    </p>
+                </div>
             </div>
         </div>
     </body>

@@ -94,7 +94,8 @@ module.exports = function (grunt) {
                             "dist/*.js",
                             "dist/*.css",
                             "dist/*.png",
-                            "LICENSE"
+                            "LICENSE",
+                            "bower.json"
                         ]
                     }
                 ]
@@ -126,7 +127,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask("bower", "Generate a bower.json file and publish built assets to Bower", function () {
-        grunt.file.write("dist/bower.json", JSON.stringify({
+        grunt.file.write("bower.json", JSON.stringify({
             name: "angular-emoji-filter",
             version: grunt.config("pkg.version"),
             main: "dist/emoji.min.js"
@@ -140,6 +141,7 @@ module.exports = function (grunt) {
         "uglify",
         "cssmin",
         "clean:max",
+        "bower",
         "compress"
     ]);
 

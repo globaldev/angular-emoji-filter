@@ -1,5 +1,5 @@
 {
     "name": "angular-emoji",
     "version": "0.0.2",
-    "main": "dist/emoji.min.js"
+    "main": ["dist/emoji.min.js", "dist/emoji.min.css"]
 }

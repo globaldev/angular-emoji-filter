@@ -49,11 +49,12 @@ Use it just like any Angular filter. Here's some very simple example markup:
         <meta charset="utf-8">
         <link rel="stylesheet" href="emoji.min.css">
         <script src="angular.min.js"></script>
+        <script src="angular-sanitize.min.js"></script>
         <script src="emoji.min.js"></script>
     </head>
     <body ng-app="app" ng-controller="AppCtrl">
         <ul>
-            <li ng-repeat="message in messages" ng-bind-html-unsafe="message | emoji"></li>
+            <li ng-repeat="message in messages" ng-bind-html="message | emoji"></li>
         </ul>
     </body>
 </html>
